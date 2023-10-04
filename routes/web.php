@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Users;
+use App\Http\Controllers\usersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,39 +19,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*
-|--------------------------------------------------------------------------
-| Make Controller
-|--------------------------------------------------------------------------
-|   Go to the terminal and create controller
-|
-|    - php artisan make:controller <Controller Name>
-|
-|   Find this controller
-|       - app/http/controllers/
-|
-|
-*/
 
-/*
-|--------------------------------------------------------------------------
-| Make Function in controller
-|--------------------------------------------------------------------------
-|   Find this controller
-|       - app/http/controllers/Users.php
-|
-|    and create function line no. - 10 to 12
-|
-*/
+// Call View
+Route::get('/users', function(){
+    return view('users');
+});
+// Route::view('/users', 'users');
 
-//  Call Controller from Routing
-Route::get('users',[Users::class,'index']);
-//  End
+// Pass Data in view
+Route::get('/users/{name}', function($name){
+    return view('users', ['abc'=>$name]);
+});
 
-// Pass Params with URL
-Route::get('users/{user}',[Users::class,'datapass']);
 
-// API Call and Json format output
-Route::get('ap/{apicall}',[Users::class,'json_format']);
+// Pass to view page in Controller and static data pass
+Route::get('/users-controller', [usersController::class, 'loadPage']);
 
-//  End
+// Pass to view page in Controller dynamic data pass
+Route::get('/users-controller/{name}', [usersController::class, 'dynamicPage']);
+
+// End
