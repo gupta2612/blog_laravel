@@ -19,23 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-// Call View
-Route::get('/users', function(){
-    return view('users');
+Route::get('/about-us', function () {
+    return view('about');
 });
-// Route::view('/users', 'users');
-
-// Pass Data in view
-Route::get('/users/{name}', function($name){
-    return view('users', ['abc'=>$name]);
-});
-
-
-// Pass to view page in Controller and static data pass
-Route::get('/users-controller', [usersController::class, 'loadPage']);
-
-// Pass to view page in Controller dynamic data pass
-Route::get('/users-controller/{name}', [usersController::class, 'dynamicPage']);
-
-// End

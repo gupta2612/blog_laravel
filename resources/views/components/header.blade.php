@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Welcome to Laravel</title>
 </head>
 <body>
-
-    <h1>Welcome to View || {{ $abc }}</h1>
-
-</body>
-</html>
+<h1>{{ $title }}</h1>
