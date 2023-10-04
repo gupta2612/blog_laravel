@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Users;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,14 +19,39 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/** routing in short view **/
-        Route::view("/about-us","about");
-        Route::view("/contact-us","contact");
-/** End **/
+/*
+|--------------------------------------------------------------------------
+| Make Controller
+|--------------------------------------------------------------------------
+|   Go to the terminal and create controller
+|
+|    - php artisan make:controller <Controller Name>
+|
+|   Find this controller
+|       - app/http/controllers/
+|
+|
+*/
 
-/** Pass data with Routing **/
-        Route::get('/pass-to-data/{name}', function ($name) {
-            return view('data-pass',['name'=>$name]);
-        });
-/** End **/
+/*
+|--------------------------------------------------------------------------
+| Make Function in controller
+|--------------------------------------------------------------------------
+|   Find this controller
+|       - app/http/controllers/Users.php
+|
+|    and create function line no. - 10 to 12
+|
+*/
 
+//  Call Controller from Routing
+Route::get('users',[Users::class,'index']);
+//  End
+
+// Pass Params with URL
+Route::get('users/{user}',[Users::class,'datapass']);
+
+// API Call and Json format output
+Route::get('ap/{apicall}',[Users::class,'json_format']);
+
+//  End
