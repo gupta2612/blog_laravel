@@ -17,23 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/**----------------------------------------------**/
-/** how to make routing **/
-
-        // Route::get('/about-us', function () {
-        //     return view('about');
-        // });
-
-        // Route::get('/contact-us', function () {
-        //     return view('contact');
-        // });
-
-/** End **/
 /** routing in short view **/
         Route::view("/about-us","about");
         Route::view("/contact-us","contact");
 /** End **/
-/**----------------------------------------------**/
 
 /** Pass data with Routing **/
         Route::get('/pass-to-data/{name}', function ($name) {
@@ -41,12 +28,3 @@ Route::get('/', function () {
         });
 /** End **/
 
-/** Anchor Tag **/
-    //    Looking for welcome page
-/** End **/
-
-/** Redirect **/
-        Route::get('/home', function () {
-            return redirect("about-us");
-        });
-/** End **/

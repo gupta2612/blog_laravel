@@ -8,12 +8,5 @@
 </head>
 <body>
     <h1>Welcome to Laravel</h1>
-
-    {{-- Anchor Tag --}}
-        <a href="/about-us">About Us</a> <br>
-        <a href="/contact-us">Contact Us</a>  <br>
-        <a href="/pass-to-data/test">Data Pass</a>  <br>
-    {{-- End --}}
-
 </body>
 </html>
