@@ -8,19 +8,15 @@ class UsersController extends Controller
 {
     //
 
+    /**
+     * Include view in View page
+     * Php in js
+     * Csrf token
+     * Header and Footer
+     */
+
     function viewLoad() {
-
-     //   return view('users');
-
-      //  return view('users', ['user_name'=> ['Manish', 'Gupta', 'Brijesh']]);
-
-      /*if and else condition*/
-    //    return view('users', ['user_name'=> 'Gupta']);
-
-    /* foreach loop */
-
-    
-    return view('users', ['user_name'=> ['Manish', 'Gupta', 'Brijesh']]);
-
+    $data =  ['Manish', 'Gupta', 'Brijesh'];
+    return view('users', ['user_name'=> $data]);
     }
 }
