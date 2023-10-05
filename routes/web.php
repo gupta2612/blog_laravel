@@ -21,10 +21,11 @@ Route::get('/', function () {
 
 
 /**
-     * Use Validation Function
-     * Show Error message
-     * Error with every field
+     * Make Middleware
+     * Apply Middleware
      */
 
 Route::post("users", [UsersController::class, 'getData']);
 Route::view('login', 'users');
+Route::view('home', 'home');
+Route::view('noaccess', 'noaccess');
