@@ -21,10 +21,9 @@ Route::get('/', function () {
 
 
 /**
-     * Make HTML Form
-     * Make Controller
-     * Route view and Post
-     * Get form Data
+     * Use Validation Function
+     * Show Error message
+     * Error with every field
      */
 
 Route::post("users", [UsersController::class, 'getData']);
