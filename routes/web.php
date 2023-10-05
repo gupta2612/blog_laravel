@@ -19,4 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("users", [UsersController::class, 'viewLoad']);
+
+/**
+     * Make HTML Form
+     * Make Controller
+     * Route view and Post
+     * Get form Data
+     */
+
+Route::post("users", [UsersController::class, 'getData']);
+Route::view('login', 'users');

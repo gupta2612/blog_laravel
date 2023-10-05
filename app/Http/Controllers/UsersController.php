@@ -8,15 +8,7 @@ class UsersController extends Controller
 {
     //
 
-    /**
-     * Include view in View page
-     * Php in js
-     * Csrf token
-     * Header and Footer
-     */
-
-    function viewLoad() {
-    $data =  ['Manish', 'Gupta', 'Brijesh'];
-    return view('users', ['user_name'=> $data]);
+    function getData(Request $req) {
+        return $req->input();
     }
 }
