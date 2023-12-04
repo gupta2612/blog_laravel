@@ -16,7 +16,9 @@ use App\Http\Controllers\UsersController;
 */
 
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 /**
      * Form Validation
@@ -27,20 +29,18 @@ Route::view('login', 'users');
 
 
 /**
-     * Group Middleware
+     * Route middleware
      *
      * folder || app->Http->Middleware-> add link create MIddleware link (line no. 48)
      */
+
+
+// Route middleware || Only Single Route Use
+
 Route::view('home', 'home');
-
 Route::view('noaccess', 'noaccess');
+Route::view('checkage', 'checkAge')->middleware('protectedAge');
 
-// Group Middleware page use
 
-Route::middleware(['protectPage'])->group(function () {
-    Route::view('checkage', 'checkAge');
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
-});
+

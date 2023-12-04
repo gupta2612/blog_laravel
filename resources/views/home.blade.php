@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Group Middleware | Home</title>
+    <title>Route middleware | Home</title>
 </head>
 <body>
 
-    <h1>Home Group Middleware | Not use condition on Home page Group Middleware</h1>
+    <h1>HRoute middleware | Not use condition on Home page Route middleware</h1>
 
 </body>
 </html>

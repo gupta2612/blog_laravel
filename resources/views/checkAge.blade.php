@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Group Middleware</title>
+    <title>Route middleware</title>
 </head>
 <body>
 
-    <h1>Group Middleware | You can access to over website</h1>
+    <h1>Route middleware | You can access to over website</h1>
 
     <h2>Age Check 18years Old</h2>
 
