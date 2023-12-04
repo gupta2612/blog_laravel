@@ -15,17 +15,32 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 /**
-     * Make Middleware
-     * Apply Middleware
+     * Form Validation
      */
 
 Route::post("users", [UsersController::class, 'getData']);
 Route::view('login', 'users');
+
+
+/**
+     * Group Middleware
+     *
+     * folder || app->Http->Middleware-> add link create MIddleware link (line no. 48)
+     */
 Route::view('home', 'home');
+
 Route::view('noaccess', 'noaccess');
+
+// Group Middleware page use
+
+Route::middleware(['protectPage'])->group(function () {
+    Route::view('checkage', 'checkAge');
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+});
