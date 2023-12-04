@@ -23,9 +23,12 @@ Route::get('/', function () {
 /**
      * Make Middleware
      * Apply Middleware
+     * check Middleware like => http://127.0.0.1:8000/?age=19 || http://127.0.0.1:8000/users?age=19 || http://127.0.0.1:8000/?<condition apply>
      */
 
 Route::post("users", [UsersController::class, 'getData']);
 Route::view('login', 'users');
+
+// ------------------------------------------Make Middleware
 Route::view('home', 'home');
 Route::view('noaccess', 'noaccess');
