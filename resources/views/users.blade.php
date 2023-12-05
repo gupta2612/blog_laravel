@@ -22,7 +22,7 @@
         @endforeach
         @endif --}}
 
-    <form action="users" method="post">
+    {{-- <form action="users" method="post">
         @csrf
         <input type="text" name="username" id="" placeholder="Enter username">
         <br>
@@ -37,7 +37,7 @@
         @enderror</span>
         <br>
         <button type="submit">Submit</button>
-    </form>
+    </form> --}}
 
 </body>
 </html>

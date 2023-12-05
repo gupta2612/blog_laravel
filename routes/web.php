@@ -24,23 +24,10 @@ Route::get('/', function () {
      * Form Validation
      */
 
-Route::post("users", [UsersController::class, 'getData']);
-Route::view('login', 'users');
-
-
-/**
-     * Route middleware
-     *
-     * folder || app->Http->Middleware-> add link create MIddleware link (line no. 57)
-     */
-
-
-// Route middleware || Only Single Route Use
-
-Route::view('home', 'home');
-Route::view('noaccess', 'noaccess');
-Route::view('checkage', 'checkAge')->middleware('protectedAge');
+// Route::post("users", [UsersController::class, 'getData']);
+// Route::view('login', 'users');
 
 
 
+Route::get('/users', [UsersController::class, 'databaseCheck']);
 
