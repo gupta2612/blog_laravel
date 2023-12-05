@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +20,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/users', [UsersController::class, 'request_method']);
+Route::post('/users', [UserAuth::class, 'loginUser']);
 
- Route::post('/users', [UsersController::class, 'request_method']);
+Route::get('/login', function () {
+    if (session()->has('username')) {
+        return redirect('profile');
+    }
+    return view('/users');
+});
 
-// Route::put('/users', [UsersController::class, 'request_method']);
+Route::get('/logout', function () {
+    if (session()->has('username')) {
+        session()->pull('username', null);
+    }
+    return redirect('/login');
+});
 
-// Route::delete('/users', [UsersController::class, 'request_method']);
+Route::view('/profile', 'profile');
 
 
-Route::view('/login', 'users');
+
