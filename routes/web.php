@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\UserAPI_Controller;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', [UserAPI_Controller::class, 'index']);
+// Route::get('/users', [UsersController::class, 'request_method']);
 
+ Route::post('/users', [UsersController::class, 'request_method']);
+
+// Route::put('/users', [UsersController::class, 'request_method']);
+
+// Route::delete('/users', [UsersController::class, 'request_method']);
+
+
+Route::view('/login', 'users');

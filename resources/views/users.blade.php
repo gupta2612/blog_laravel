@@ -22,22 +22,30 @@
         @endforeach
         @endif --}}
 
-    {{-- <form action="users" method="post">
+    {{-- Method GET
+
+         <form action="users" method="GET">
+
+      End Method GET  --}}
+
+
+
+    {{-- Method POST --}}
+    <form action="users" method="POST">
         @csrf
+
+        {{-- @method('PUT') --}}
+
+        {{-- @method('DELETE') --}}
+
         <input type="text" name="username" id="" placeholder="Enter username">
         <br>
-        <span class="err">@error('username')
-            {{ $message }}
-        @enderror</span>
         <br>
         <input type="password" name="password" id="" placeholder="Password">
         <br>
-        <span class="err">@error('password')
-            {{ $message }}
-        @enderror</span>
         <br>
         <button type="submit">Submit</button>
-    </form> --}}
+    </form>
 
 </body>
 </html>
