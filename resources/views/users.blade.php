@@ -12,23 +12,13 @@
     </style>
 </head>
 <body>
-    <h1>Flash Form</h1>
-    @if (session('name'))
-    <h3>Data Saved for {{ session('name') }}</h3>
-
-    @endif
-    <form action="storedata" method="POST">
+    <h1>File Upload Form</h1>
+    <form action="fileupload" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="text" name="name" id="" placeholder="Enter Name">
+        <input type="file" name="docs" id="">
         <br>
         <br>
-        <input type="text" name="email" id="" placeholder="Enter Email">
-        <br>
-        <br>
-        <input type="text" name="mobile" id="" placeholder="Enter Mobile">
-        <br>
-        <br>
-        <button type="submit">Submit</button>
+        <button type="submit">Upload</button>
     </form>
 
 </body>

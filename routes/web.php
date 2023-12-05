@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\UserFlashController;
+use App\Http\Controllers\FileUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/users', 'users');
-Route::post('/storedata', [UserFlashController::class, 'flashSession']);
+Route::view('users', 'users');
+
+Route::post('fileupload', [FileUploadController::class, 'UploadFile']);
+
 
