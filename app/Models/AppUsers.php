@@ -8,7 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class AppUsers extends Model
 {
     use HasFactory;
-
-    
-    public $table="app_blog";
 }

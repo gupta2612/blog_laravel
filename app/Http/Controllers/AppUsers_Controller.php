@@ -7,21 +7,13 @@ use  App\Models\AppUsers;
 
 class AppUsers_Controller extends Controller
 {
-    // Models database
+    function ShowData(){
 
+        $data = AppUsers::all();
+        return  view('home', ['collection'=>$data]);
 
-      /**  Single Table fatch **/
-    function getData(){
-
-        return  AppUsers::all();
     }
 
-    /**  Multiple Table fatch **/
-
-    // function getData(){
-    //     $multi = array('users'=>AppUsers::all(), 'blogs'=>AppUsers::all());
-    //     return  $multi;
-    // }
 
 
 }

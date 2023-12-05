@@ -20,14 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/**
-     * Form Validation
-     */
 
-// Route::post("users", [UsersController::class, 'getData']);
-// Route::view('login', 'users');
 
-// Models database
-
-Route::get('/users', [AppUsers_Controller::class, 'getData']);
+Route::get('/users', [AppUsers_Controller::class, 'ShowData']);
 
