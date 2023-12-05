@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\UserAuth;
+use App\Http\Controllers\UserFlashController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,23 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/users', [UserAuth::class, 'loginUser']);
-
-Route::get('/login', function () {
-    if (session()->has('username')) {
-        return redirect('profile');
-    }
-    return view('/users');
-});
-
-Route::get('/logout', function () {
-    if (session()->has('username')) {
-        session()->pull('username', null);
-    }
-    return redirect('/login');
-});
-
-Route::view('/profile', 'profile');
-
-
+Route::view('/users', 'users');
+Route::post('/storedata', [UserFlashController::class, 'flashSession']);
 

@@ -12,16 +12,23 @@
     </style>
 </head>
 <body>
-    <h1>Login Form</h1>
-    <form action="users" method="POST">
+    <h1>Flash Form</h1>
+    @if (session('name'))
+    <h3>Data Saved for {{ session('name') }}</h3>
+
+    @endif
+    <form action="storedata" method="POST">
         @csrf
-        <input type="text" name="username" id="" placeholder="Enter username">
+        <input type="text" name="name" id="" placeholder="Enter Name">
         <br>
         <br>
-        <input type="password" name="password" id="" placeholder="Password">
+        <input type="text" name="email" id="" placeholder="Enter Email">
         <br>
         <br>
-        <button type="submit">Login</button>
+        <input type="text" name="mobile" id="" placeholder="Enter Mobile">
+        <br>
+        <br>
+        <button type="submit">Submit</button>
     </form>
 
 </body>
