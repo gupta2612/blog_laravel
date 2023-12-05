@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AppUsers_Controller;
+use App\Http\Controllers\UserAPI_Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +20,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/**
-     * Form Validation
-     */
-
-// Route::post("users", [UsersController::class, 'getData']);
-// Route::view('login', 'users');
-
-// Models database
-
-Route::get('/users', [AppUsers_Controller::class, 'getData']);
+Route::get('/users', [UserAPI_Controller::class, 'index']);
 
