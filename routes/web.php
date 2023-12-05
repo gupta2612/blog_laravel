@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\AppUsers_Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ Route::get('/', function () {
 // Route::post("users", [UsersController::class, 'getData']);
 // Route::view('login', 'users');
 
+// Models database
 
-
-Route::get('/users', [UsersController::class, 'databaseCheck']);
+Route::get('/users', [AppUsers_Controller::class, 'getData']);
 
