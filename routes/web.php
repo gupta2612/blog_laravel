@@ -20,8 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('users', 'users');
 
-Route::post('fileupload', [FileUploadController::class, 'UploadFile']);
+
+Route::get('/users/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('profile');
+});
 
 
