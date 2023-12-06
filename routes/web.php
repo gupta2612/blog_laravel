@@ -22,10 +22,9 @@ Route::get('/', function () {
 
 
 
-Route::post('/users', [AppUsers_Controller::class, 'AddData']);
-
-Route::view('/apply', 'addData');
-
+// Route::post('/users', [AppUsers_Controller::class, 'AddData']);
+Route::get('/list', [AppUsers_Controller::class, 'ShowData']);
+Route::get('/delete/{id}', [AppUsers_Controller::class, 'deleteData']);
 
 
 

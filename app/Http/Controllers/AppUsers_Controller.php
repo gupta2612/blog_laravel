@@ -7,15 +7,29 @@ use  App\Models\AppUsers;
 
 class AppUsers_Controller extends Controller
 {
-    function AddData(Request $req){
+    function ShowData(){
 
-        $add = new AppUsers;
-        $add->name=$req->name;
-        $add->username=$req->username;
-        $add->password=$req->password;
-        $add->token_key=$req->_token;
-        $add->save();
+        $data = AppUsers::paginate(10);
+        return  view('addData', ['collection'=>$data]);
 
-        return redirect('apply');
     }
+    function deleteData($id){
+
+        $data = AppUsers::find($id);
+        $data->delete();
+        return redirect('/list');
+
+    }
+
+    // function AddData(Request $req){
+
+    //     $add = new AppUsers;
+    //     $add->name=$req->name;
+    //     $add->username=$req->username;
+    //     $add->password=$req->password;
+    //     $add->token_key=$req->_token;
+    //     $add->save();
+
+    //     return redirect('apply');
+    // }
 }
