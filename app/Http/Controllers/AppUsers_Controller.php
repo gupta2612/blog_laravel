@@ -7,13 +7,15 @@ use  App\Models\AppUsers;
 
 class AppUsers_Controller extends Controller
 {
-    function ShowData(){
+    function AddData(Request $req){
 
-        $data = AppUsers::paginate(10);
-        return  view('home', ['collection'=>$data]);
+        $add = new AppUsers;
+        $add->name=$req->name;
+        $add->username=$req->username;
+        $add->password=$req->password;
+        $add->token_key=$req->_token;
+        $add->save();
 
+        return redirect('apply');
     }
-
-
-
 }

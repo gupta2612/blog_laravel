@@ -22,5 +22,10 @@ Route::get('/', function () {
 
 
 
-Route::get('/users', [AppUsers_Controller::class, 'ShowData']);
+Route::post('/users', [AppUsers_Controller::class, 'AddData']);
+
+Route::view('/apply', 'addData');
+
+
+
 
