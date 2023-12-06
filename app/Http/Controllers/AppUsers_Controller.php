@@ -9,7 +9,7 @@ class AppUsers_Controller extends Controller
 {
     function ShowData(){
 
-        $data = AppUsers::all();
+        $data = AppUsers::paginate(10);
         return  view('home', ['collection'=>$data]);
 
     }

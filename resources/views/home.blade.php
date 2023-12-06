@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Show List from Database Table | Home</title>
+    <style>
+        .w-5{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Show List from Database Table</h1>
@@ -29,5 +34,12 @@
             <td>{{ $item['updated_at'] }}</td>
         </tr>
         @endforeach
+
+    </table>
+    <div class="pagination">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">{{ $collection->links() }}</a></li>
+        </ul>
+    </div>
 </body>
 </html>
