@@ -25,6 +25,8 @@ Route::get('/', function () {
 // Route::post('/users', [AppUsers_Controller::class, 'AddData']);
 Route::get('/list', [AppUsers_Controller::class, 'ShowData']);
 Route::get('/delete/{id}', [AppUsers_Controller::class, 'deleteData']);
+Route::get('/edit/{id}', [AppUsers_Controller::class, 'editData']);
 
+Route::post('/edit', [AppUsers_Controller::class, 'updateData']);
 
 

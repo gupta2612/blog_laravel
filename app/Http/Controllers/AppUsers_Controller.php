@@ -10,7 +10,7 @@ class AppUsers_Controller extends Controller
     function ShowData(){
 
         $data = AppUsers::paginate(10);
-        return  view('addData', ['collection'=>$data]);
+        return  view('listData', ['collection'=>$data]);
 
     }
     function deleteData($id){
@@ -20,16 +20,19 @@ class AppUsers_Controller extends Controller
         return redirect('/list');
 
     }
+    function editData($id){
 
-    // function AddData(Request $req){
+        $data = AppUsers::find($id);
+        return view('updateData', ['collection'=>$data]);
 
-    //     $add = new AppUsers;
-    //     $add->name=$req->name;
-    //     $add->username=$req->username;
-    //     $add->password=$req->password;
-    //     $add->token_key=$req->_token;
-    //     $add->save();
+    }
+    function updateData(Request $req){
 
-    //     return redirect('apply');
-    // }
+        $data = AppUsers::find($req->id);
+        $data->name = $req->name;
+        $data->username= $req->username;
+        $data->password = $req->password;
+        $data->save();
+        return redirect('list');
+    }
 }

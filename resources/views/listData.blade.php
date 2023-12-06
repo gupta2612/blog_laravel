@@ -15,7 +15,6 @@
 <body>
     <div class="container">
         <div class="row">
-
             <h1>Show List from Database Table</h1>
             <table class="table table-bordered">
                 <tr>
@@ -37,7 +36,7 @@
                     <td>{{ $item['token_key'] }}</td>
                     <td>{{ $item['created_at'] }}</td>
                     <td>{{ $item['updated_at'] }}</td>
-                    <td><a href="{{ 'delete/'.$item['id'] }}">Delete</a></td>
+                    <td><a href="{{ 'delete/'.$item['id'] }}">Delete</a> | <a href="{{ 'edit/'.$item['id'] }}">Edit</a></td>
                 </tr>
                 @endforeach
 
@@ -45,30 +44,6 @@
             <div class="pagi" style="margin-top: 20px">
                 <a href="#">{{ $collection->links() }}</a>
             </div>
-
-
-
-
-
-         {{-- <h1>Save Data in Database</h1>
-            <div class="col-lg-12">
-                <form method="POST" action="/users" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                      <label>Name</label>
-                      <input type="text" class="form-control" name="name" placeholder="Enter Name">
-                    </div>
-                    <div class="form-group">
-                      <label>Username</label>
-                      <input type="text" class="form-control" name="username" placeholder="Enter Username">
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Enter Password">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-            </div> --}}
         </div>
     </div>
 
