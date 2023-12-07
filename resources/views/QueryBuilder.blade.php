@@ -29,21 +29,21 @@
                 </tr>
                 @foreach ($collection as $item)
                 <tr>
-                    <td scope="row">{{ $item['id'] }}</td>
-                    <td>{{ $item['name'] }}</td>
-                    <td>{{ $item['username'] }}</td>
-                    <td>{{ $item['password'] }}</td>
-                    <td>{{ $item['token_key'] }}</td>
-                    <td>{{ $item['created_at'] }}</td>
-                    <td>{{ $item['updated_at'] }}</td>
-                    <td><a href="{{ 'delete/'.$item['id'] }}">Delete</a> | <a href="{{ 'edit/'.$item['id'] }}">Edit</a></td>
+                    <td scope="row">{{ $item->id }}</td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->username }}</td>
+                    <td>{{ $item->password }}</td>
+                    <td>{{ $item->token_key }}</td>
+                    <td>{{ $item->created_at }}</td>
+                    <td>{{ $item->updated_at }}</td>
+                    <td><a href="{{ 'delete/'.$item->id }}">Delete</a> | <a href="{{ 'edit/'.$item->id }}">Edit</a></td>
                 </tr>
                 @endforeach
 
             </table>
-            <div class="pagi" style="margin-top: 20px">
+            {{-- <div class="pagi" style="margin-top: 20px">
                 <a href="#">{{ $collection->links() }}</a>
-            </div>
+            </div> --}}
         </div>
     </div>
 

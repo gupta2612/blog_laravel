@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AppUsers_Controller;
-
+use App\Http\Controllers\QueryBuilder;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,12 +21,16 @@ Route::get('/', function () {
 });
 
 
+// QuilyBuild
+Route::get('/query', [QueryBuilder::class, 'operations_1']);
+Route::get('/query1', [QueryBuilder::class, 'operations_2']);
+Route::get('/query2', [QueryBuilder::class, 'operations_3']);
+Route::get('/query3', [QueryBuilder::class, 'operations_4']);
+Route::get('/query4', [QueryBuilder::class, 'operations_5']);
+Route::get('/query5', [QueryBuilder::class, 'operations_6']);
+Route::get('/query6', [QueryBuilder::class, 'operations_7']);
 
-// Route::post('/users', [AppUsers_Controller::class, 'AddData']);
-Route::get('/list', [AppUsers_Controller::class, 'ShowData']);
-Route::get('/delete/{id}', [AppUsers_Controller::class, 'deleteData']);
-Route::get('/edit/{id}', [AppUsers_Controller::class, 'editData']);
 
-Route::post('/edit', [AppUsers_Controller::class, 'updateData']);
+
 
 
